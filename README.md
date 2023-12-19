@@ -4,7 +4,7 @@ Docker image that performs a MySQL backup and uploads the result to S3.
 
 ## Usage
 
-0. Create a file called `cron-job.yaml` with the following content:
+Create a file called `cron-job.yaml` with the following content:
 
 ```
 apiVersion: batch/v1
@@ -46,8 +46,8 @@ spec:
                   value:
 ```
 
-1. `kubectl apply -f cron-job.yaml`
-2. `kubectl create job --from=cronjob/mysql-backup mysql-backup-test`
+- `kubectl apply -f cron-job.yaml`
+- `kubectl create job --from=cronjob/mysql-backup mysql-backup-test`
 
 ## Development
 
@@ -76,3 +76,4 @@ docker run \
 - Notify results
 - Add better instructions on how to run it
 - Add instructions on how to setup the S3 bucket
+- Manager releases
