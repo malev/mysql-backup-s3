@@ -16,11 +16,11 @@ do
         exit 0
     fi
 
-    if output=$(aws s3 cp /tmp/$BACKUP_FILE $AWS_BUCKET_URI/$AWS_BUCKET_PATH/$BACKUP_FILE 2>&1)
+    if output=$(aws s3 cp /tmp/$BACKUP_FILE $AWS_BUCKET_URI/$AWS_BUCKET_PATH/$MYSQL_DATABASE/$BACKUP_FILE 2>&1)
     then
-        echo -e "Success: $BACKUP_FILE has been uploaded to $AWS_BUCKET_URI/$AWS_BUCKET_PATH."
+        echo -e "Success: $BACKUP_FILE has been uploaded to $AWS_BUCKET_URI/$AWS_BUCKET_PATH/$MYSQL_DATABASE/."
     else
-        echo -e "Failure: $BACKUP_FILE was not uploaded to $AWS_BUCKET_URI/$AWS_BUCKET_PATH."
+        echo -e "Failure: $BACKUP_FILE was not uploaded to $AWS_BUCKET_URI/$AWS_BUCKET_PATH/$MYSQL_DATABASE/."
         echo $output
         exit 0
     fi
