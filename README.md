@@ -38,7 +38,7 @@ spec:
                   value:
                 - name: MYSQL_PORT
                   value:
-                - name: MYSQL_DATABASE
+                - name: DATABASES
                   value:
                 - name: MYSQL_USER
                   value:
@@ -67,7 +67,7 @@ docker run \
  -e AWS_DEFAULT_REGION=YOUR-REGION \
  -e AWS_BUCKET_URI=s3://YOUR-BUCKET \
  -e AWS_BUCKET_PATH=YOUR-BUCKET-PATH \
- -e MYSQL_DATABASE=wordpress malev/mysql-backup-s3
+ -e DATABASES=wordpress,joomla malev/mysql-backup-s3
 ```
 
 ## TODO
